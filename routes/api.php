@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\StudentController;
 use App\Models\Student;
 use Illuminate\Http\Request;
@@ -25,3 +26,10 @@ Route::get('students/{id}',[StudentController::class,'show']);
 Route::get('students/{id}/edit',[StudentController::class,'edit']);
 Route::put('students/{id}/update',[StudentController::class,'update']);
 Route::delete('students/{id}/delete',[StudentController::class,'destroy']);
+
+//Route Product
+Route::get('/products',[ProductController::class,'index']);
+Route::post('/products',[ProductController::class,'addproduct']);
+Route::get('/products/{id}',[ProductController::class,'show']);
+Route::put('/products/{id}/update',[ProductController::class,'update']);
+Route::delete('/products/{id}/delete',[ProductController::class,'destroy']);
